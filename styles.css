@@ -1,0 +1,128 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header header header"
+        "hero hero hero ad ad"
+        "body body body sidebar sidebar"
+        "footer footer footer footer footer";
+    grid-gap: 10px;
+}
+
+/* Header */
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    background-color: #cce7ff;
+    padding: 10px;
+    text-align: center;
+}
+
+.brand, .nav, .tools {
+    padding: 10px;
+}
+
+/* Hero Section */
+.hero {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-gap: 10px;
+    background-color: #eaf4ff;
+    padding: 10px;
+}
+
+.hero-feature, .hero-cta {
+    background-color: #e0f7fa;
+    padding: 20px;
+}
+
+.ad {
+    grid-area: ad;
+    background-color: #ffd54f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Body */
+.body {
+    grid-area: body;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: 10px;
+}
+
+.article-feature, .article-listing {
+    background-color: #ffecb3;
+    padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #c8e6c9;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #d7ccc8;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Hover Effect */
+.hero-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .container {
+        grid-template-areas:
+            "header header header"
+            "hero hero ad"
+            "body body body"
+            "sidebar sidebar sidebar"
+            "footer footer footer";
+    }
+
+    .hero {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "hero"
+            "ad"
+            "body"
+            "sidebar"
+            "footer";
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+}
